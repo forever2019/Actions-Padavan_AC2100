@@ -1,12 +1,12 @@
-name: Build Padavan
+name: Build_Padavan
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/hanwckf/rt-n56u
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/Yh793/rt-n56u
+  REPO_BRANCH: chongshengb
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   Build_Targets: RM2100
@@ -101,14 +101,20 @@ jobs:
         /opt/rt-n56u/trunk/images/*.trx
         /opt/rt-n56u/trunk/configs/templates/${{ env.Build_Targets }}.config
 
+     #- name: Delete workflow runs
+     # uses: GitRML/delete-workflow-runs@main
+     # with:
+     # token: ${{ secrets.ACTIONS_REPO_PAT }}
+     # repository: ${{ github.repository }}
+     # retain_days: 1
+     # keep_minimum_runs: 3
+
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
       with:
-       token: ${{ secrets.ACTIONS_REPO_PAT }}
-       repository: ${{ github.repository }}
-       retain_days: 1
-       keep_minimum_runs: 3
-
+        retain_days: 1
+        keep_minimum_runs: 3
+        
    # - name: Remove old Releases
    #   uses: dev-drprasad/delete-older-releases@v0.1.0
    #   if: env.UPLOAD_RELEASE == 'true' && !cancelled()
