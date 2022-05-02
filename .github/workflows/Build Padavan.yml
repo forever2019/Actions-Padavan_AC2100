@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/MeIsReallyBa/padavan-4.4
-  REPO_BRANCH: main
+  REPO_URL: https://github.com/hanwckf/rt-n56u
+  REPO_BRANCH: master
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   Build_Targets: R2100
