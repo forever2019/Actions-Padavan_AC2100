@@ -9,8 +9,8 @@ env:
   REPO_BRANCH: master
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
-  Build_Targets: R2100
-  CONFIG_FILE: R2100.config
+  Build_Targets: MI-R4A
+  CONFIG_FILE: r4a.config
   DIY_SH: diy.sh
 
 jobs:
